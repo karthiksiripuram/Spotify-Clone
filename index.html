@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+</head>
+
+<body>
+    <div class="navbar flex align-center">
+        <div class="leftnav flex align-center">
+            <img onclick="toggleSidebar()" class="invert hamburger" src="img/hamburger.svg" alt="hamburger">
+            <div class="logo">
+                <img class="invert" src="img/logo.svg" alt="Logo">
+            </div>
+            <div class="home">
+                <img class="invert" src="img/home.svg" alt="Home">
+            </div>
+            <div class="search flex">
+                <img class="invert" src="img/search.svg" alt="Search">
+                <input type="text" name="img/search" placeholder="What do you want to play?">
+                <img class="invert" src="img/browse.svg" alt="Browse">
+            </div>
+        </div>
+        <div class="rightnav flex align-center">
+            <button class="support">Premium</button>
+            <button class="support">Support</button>
+            <button class="support">Download</button>
+            <p>|</p>
+            <img class="invert" src="img/install.svg" alt="Install">
+            <p>Install App</p>
+            <p>Sign Up</p>
+            <button class="login">Log in</button>
+        </div>
+    </div>
+    <div id="sidebar" class="library">
+        <div class="close" onclick="toggleSidebar()">
+            <img class="invert" src="img/close.svg" alt="close" style="width: 30px;">
+        </div>
+        <div class="heading">
+            <h2>
+                Your Library
+            </h2>
+            <svg class="invert " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <path
+                    d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 337.7 110.3 352 128 352L288 352L288 512C288 529.7 302.3 544 320 544C337.7 544 352 529.7 352 512L352 352L512 352C529.7 352 544 337.7 544 320C544 302.3 529.7 288 512 288L352 288L352 128z" />
+            </svg>
+        </div>
+        <div class="songsList">
+            <ul>
+            </ul>
+        </div>
+        <div class="footer">
+            <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
+            <div><a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a></div>
+            <div><a href="https://www.spotify.com/jp/legal/privacy-policy/"><span>Privacy Policy</span></a>
+            </div>
+            <div><a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a></div>
+            <div><a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a></div>
+            <div><a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a></div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="spotify-playlist">
+            <h2>Browse all</h2>
+            <div class="cardContainer">
+            </div>
+            <div class="playbar">
+                <div class="seekbar">
+                    <div class="circle"></div>
+                </div>
+                <div class="abovebar">
+                    <div class="songinfo">
+                    </div>
+                    <div class="songbtn">
+                        <img id="previous" src="img/previous.svg" alt="">
+                        <img id="play" src="play.svg" alt="">
+                        <img id="next" src="img/next.svg" alt="">
+                    </div>
+                    <div class="flex">
+                        <div class="songtime">
+                        </div>
+                        <img class="volume" src="img/volume.svg" alt="volume">
+                        <div class="range">
+                            <input type="range" name="volume" id="range">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
