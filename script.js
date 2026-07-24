@@ -22,6 +22,8 @@ async function getSongs(folder) {
 
     CurrFolder = folder;
 
+    console.log("Folder =", folder);
+    console.log("Fetching:", `/${folder}/songs.json`);
     let res = await fetch(`/${folder}/songs.json`);
     let data = await res.json();
 
@@ -36,7 +38,7 @@ async function getSongs(folder) {
         <li>
             <img class="invert" src="img/music.svg" alt="">
             <div class="info">
-                <div>${song.replace(".mp3","")}</div>
+                <div>${song.replace(".mp3", "")}</div>
                 <div>Artist Name</div>
             </div>
             <div class="playnow">
@@ -46,9 +48,9 @@ async function getSongs(folder) {
         </li>`;
     }
 
-    Array.from(songUL.getElementsByTagName("li")).forEach((e,index)=>{
+    Array.from(songUL.getElementsByTagName("li")).forEach((e, index) => {
 
-        e.addEventListener("click",()=>{
+        e.addEventListener("click", () => {
 
             playMusic(songs[index]);
 
@@ -66,7 +68,7 @@ const playMusic = (track, pause = false) => {
         return;
     }
 
-    currentSong.src = `/${CurrFolder}/ +${track}`
+    currentSong.src = `/${CurrFolder}/` + track
     if (!pause) {
         currentSong.play()
         play.src = "pause.svg"
@@ -133,7 +135,7 @@ document.addEventListener("click", (e) => {
 async function main() {
 
     //Get list of all songs
-    await getSongs("songs/Hindi")
+    await getSongs("songs/English")
     playMusic(songs[0], true)
 
     //Display all the albums on the page
