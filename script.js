@@ -127,7 +127,7 @@ document.addEventListener("click", (e) => {
 async function main() {
 
     //Get list of all songs
-    await getSongs("/songs/")
+    await getSongs("/songs/Hindi")
     playMusic(songs[0], true)
 
     //Display all the albums on the page
