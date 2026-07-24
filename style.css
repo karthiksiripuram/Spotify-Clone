@@ -560,6 +560,10 @@ body {
         align-items: center;
     }
 
+    .seekbar {
+        bottom: 0;
+    }
+
     .songinfo,
     .songtime {
         text-align: center;
