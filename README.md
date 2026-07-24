@@ -8,7 +8,7 @@ https://spotify-clone-eight-eta-63.vercel.app/
 
 ## 📸 Preview
 
-(Add a screenshot of your homepage here)
+![alt text](image.png)
 
 ## ✨ Features
 
