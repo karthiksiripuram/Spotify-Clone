@@ -60,7 +60,13 @@ async function getSongs(folder) {
 }
 
 const playMusic = (track, pause = false) => {
-    currentSong.src = `/${CurrFolder}/` + track
+
+    if (!track) {
+        console.error("Track is undefined");
+        return;
+    }
+
+    currentSong.src = `/${CurrFolder}/ +${track}`
     if (!pause) {
         currentSong.play()
         play.src = "pause.svg"
@@ -127,11 +133,11 @@ document.addEventListener("click", (e) => {
 async function main() {
 
     //Get list of all songs
-    await getSongs("/songs/Hindi")
+    await getSongs("songs/Hindi")
     playMusic(songs[0], true)
 
     //Display all the albums on the page
-    displayAlbum()
+    await displayAlbum()
 
 
     //Add Eventlistener to play,pause,next and previous
