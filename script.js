@@ -142,7 +142,7 @@ async function main() {
     await displayAlbum()
 
 
-    //Add Eventlistener to play,pause,next and previous
+    //Add Eventlistener to play & pause
     play.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play()
@@ -175,19 +175,26 @@ async function main() {
 
     //Add an Eventlistener to previous and next
     previous.addEventListener("click", () => {
-        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        let current = decodeURIComponent(currentSong.src.split("/").pop());
+        let index = songs.indexOf(current);
+
         console.log(index);
-        if ((index - 1) >= 0) {
-            playMusic(songs[index - 1])
+
+        if (index > 0) {
+            playMusic(songs[index - 1]);
         }
-    })
+    });
+
     next.addEventListener("click", () => {
-        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        let current = decodeURIComponent(currentSong.src.split("/").pop());
+        let index = songs.indexOf(current);
+
         console.log(index);
-        if ((index + 1) < songs.length) {
-            playMusic(songs[index + 1])
+
+        if (index < songs.length - 1) {
+            playMusic(songs[index + 1]);
         }
-    })
+    });
 
     //Add eventlistener to volume range
     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
